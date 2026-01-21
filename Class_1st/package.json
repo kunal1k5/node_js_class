@@ -1,0 +1,12 @@
+{
+  "name": "class_1st",
+  "version": "1.0.0",
+  "description": "node_js_class",
+  "license": "ISC",
+  "author": "kunal",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
