@@ -24,4 +24,18 @@ json file create -> npm init
 
             6. Null Datatype
 
+
+                     EXPRESS JS
+               ----------------------
+               it is the framework node js
+               -> http method
+                  ->get
+                  ->post
+                  ->put
+                  ->patch
+                  ->delete
+
+            =>npm i express
+            =>npm i nodemon
+            =>npm run dev
             
