@@ -1,9 +1,14 @@
 // get the data using http request
-const http = require("http");
+const http = require ("http");
+const fs = require("fs");
+const port = 8080;
 
-const url = "https://api.restful-api.dev/objects";
+const server = http.createServer((req,res)=>{
+    const date = new Date().toLocaleString();
 
-http.get(url, (res) => {
-    let data = "";
+    const logMessage = '${now}$ {req.url}: New Request Receive'
+    console.log(logMessage);
 })
+
 // Gather data in chunk
+
