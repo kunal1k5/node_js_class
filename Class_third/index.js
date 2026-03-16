@@ -36,7 +36,8 @@ const server = http.createServer((req, res) => {
         //     name : "GLA University"
         // }
 
-});
-server.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
-});
+// });
+// server.listen(port, hostname, () => {
+//     console.log(`Server running at http://${hostname}:${port}/`);
+// });
+

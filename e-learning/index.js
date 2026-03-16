@@ -24,7 +24,7 @@ app.get("/about", (req, res) => {
     });
 });
 
-// Courses route
+//Courses route
 app.get("/courses", (req, res) => {
     res.render("Course", {
         title: "Courses",
@@ -32,17 +32,45 @@ app.get("/courses", (req, res) => {
     });
 });
 
-// Contact route
-app.get("/contact", (req, res) => {
-    res.render("contact", {
-        title: "Contact_us",
-    });
-});
+// app.post("/courses", (req, res) => {
+//   const course = { id: courses.length + 1, name: req.body.name };
+//   courses.push(course);
+//   res.send(course);
+// });
 
-// Services route
-app.get("/services", (req, res) => {
-    res.render("services", {
-        title: "Our_Services",
+// // READ (all)
+// app.get("/courses", (req, res) => {
+//   res.send(courses);
+// });
+
+// // READ (single)
+// app.get("/courses/:id", (req, res) => {
+//   const course = courses.find(c => c.id == req.params.id);
+//   if (!course) return res.status(404).send("Course not found");
+//   res.send(course);
+// });
+
+// // UPDATE
+// app.put("/courses/:id", (req, res) => {
+//   const course = courses.find(c => c.id == req.params.id);
+//   if (!course) return res.status(404).send("Course not found");
+//   course.name = req.body.name;
+//   res.send(course);
+// });
+
+// // DELETE
+// app.delete("/courses/:id", (req, res) => {
+//   courses = courses.filter(c => c.id != req.params.id);
+//   res.send("Course deleted");
+// });
+
+
+
+//practice route
+
+app.get("/practice", (req,res)=>{
+    res.render("practice", {
+        title: "Practice",
     });
 });
 
