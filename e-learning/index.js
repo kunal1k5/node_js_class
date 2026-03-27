@@ -1,7 +1,9 @@
 const express = require("express");
 const path = require("path");
 
-const courses = require("./data/courses");
+const courseRoute = require("./data/courses");
+const db = require("connectDB");
+db();
 
 const port = 5000;
 
@@ -64,6 +66,20 @@ app.get("/courses", (req, res) => {
 //   res.send("Course deleted");
 // });
 
+
+//login route
+app.get("/login", (req,res)=>{
+    res.render("login", {
+        title: "Login",
+    });
+});
+
+//register route
+app.get("/register", (req,res)=>{
+    res.render("register", {
+        title: "Register",
+    });
+});
 
 
 //practice route
