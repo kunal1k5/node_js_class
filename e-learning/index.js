@@ -2,12 +2,26 @@ const express = require("express");
 const path = require("path");
 
 const courseRoute = require("./data/courses");
-const db = require("connectDB");
+const mongoose = require("mongoose");
+const db = require("./db");
 db();
 
-const port = 5000;
+const port = 5005;
 
 const app = express();
+
+//DataBase connection
+mongoose.connect("mongodb://127.0.0.1:27017/e-learning")
+.then(() => {
+    console.log("Connected to MongoDB")
+})
+.catch((err) => console.error("Error connecting to MongoDB:", err));
+
+//middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, "ui")));
+
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "ui"));
@@ -73,6 +87,25 @@ app.get("/login", (req,res)=>{
         title: "Login",
     });
 });
+
+//login post route
+app.post("/login", async (req, res) => {
+    const { email, password } = req.body;
+    try {
+        const user = await User.findOne({ email });
+        if (!user) {
+            return res.status(404).send("User not found");
+        }
+        if (user.password !== password) {
+            return res.status(400).send("Invalid password");
+        }
+        res.send("Login successful");
+    } catch (err) {
+        console.error("Error during login:", err);
+        res.status(500).send("Internal server error");
+    }
+});
+
 
 //register route
 app.get("/register", (req,res)=>{
