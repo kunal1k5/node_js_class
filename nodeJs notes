@@ -46,3 +46,22 @@ json file create -> npm init
             =>npm i mongodb
             => npm i mongoose
             =>  node --watch index.js
+
+
+
+
+
+            Question:  conditional rendering
+              Send a variable
+isloggedln = true
+task:
+if true -> show "welcome user"
+if false -> show "please login"
+solve question in lab_3rd folder
+
+step1 : create two
+1. login.ejs
+2: Dashboard.ejs
+3.searer.ejs
+
+installation : npm i express ejs

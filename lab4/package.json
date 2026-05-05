@@ -1,0 +1,15 @@
+{
+  "name": "lab4-crud-json",
+  "version": "1.0.0",
+  "description": "CRUD operations using JSON file storage (lab4)",
+  "main": "crud.js",
+  "scripts": {
+    "start": "node crud.js"
+  },
+  "dependencies": {
+    "express": "^4.22.1",
+    "mongoose": "^9.5.0",
+    "nanoid": "^5.1.9",
+    "valid-url": "^1.0.9"
+  }
+}
